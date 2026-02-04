@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yadav Software — Innovative Software Solutions</title>
+  <meta name="description" content="Yadav Software provides professional web & software development, mobile apps, and cloud solutions to help businesses grow." />
+  <meta name="author" content="Yadav Software" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#4f46e5;
+      --accent-2:#06b6d4;
+      --white:#e6eef8;
+      --radius:12px;
+      --max-width:1100px;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(650px 300px at 10% 10%, rgba(79,70,229,0.08), transparent 8%),
+        radial-gradient(450px 300px at 90% 90%, rgba(6,182,212,0.04), transparent 8%),
+        var(--bg);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px 16px;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--white);
+    }
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;font-weight:800;color:#fff;font-size:18px;
+      box-shadow:0 6px 18px rgba(79,70,229,0.15);
+    }
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{
+      color:var(--white);
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 10px;border-radius:8px;
+    }
+    nav a:hover{background:rgba(255,255,255,0.03)}
+    .cta{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      padding:10px 14px;border-radius:10px;color:white;font-weight:700;border:none;
+      text-decoration:none;
+      box-shadow:0 8px 30px rgba(79,70,229,0.18);
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:36px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:36px;
+      box-shadow: 0 6px 40px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    h1{font-size:32px;margin:0 0 10px 0;line-height:1.04}
+    p.lead{color:var(--muted);margin:0 0 20px 0}
+
+    .hero-features{
+      display:flex;gap:12px;flex-wrap:wrap;
+    }
+    .feature{
+      background:var(--glass);
+      padding:10px 12px;border-radius:10px;font-weight:600;color:var(--white);
+      display:inline-flex;gap:10px;align-items:center;font-size:14px;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:14px;padding:20px;margin-top:18px;border:1px solid rgba(255,255,255,0.02);
+    }
+    .stat-grid{display:flex;gap:12px;flex-wrap:wrap}
+    .stat{
+      background:rgba(255,255,255,0.02);
+      padding:12px;border-radius:12px;flex:1;min-width:120px;
+      text-align:center;
+    }
+    .stat h3{margin:0;font-size:20px}
+    .stat p{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+
+    /* Services & portfolio */
+    section{margin-bottom:36px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);
+    }
+    .card h4{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .project{
+      border-radius:10px;overflow:hidden;position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:14px;border:1px solid rgba(255,255,255,0.02);
+    }
+    .project .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+
+    /* contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    form label{display:block;font-size:13px;margin-bottom:8px;font-weight:600}
+    input,textarea,button,select{
+      width:100%;
+      padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:var(--white);resize:vertical;
+    }
+    textarea{min-height:140px}
+    .muted{color:var(--muted);font-size:14px}
+    .footer{
+      border-top:1px solid rgba(255,255,255,0.03);padding-top:18px;margin-top:24px;color:var(--muted);
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{order:2}
+      .grid{grid-template-columns:1fr}
+      .portfolio-grid{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted-small{color:var(--muted);font-size:13px}
+    .center{text-align:center}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true">YS</div>
+        <div>
+          <div style="font-weight:800">Yadav Software</div>
+          <div style="font-size:12px;color:var(--muted)">Digital products & engineering</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Get a Quote</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card" role="region" aria-label="Hero">
+          <h1>We build beautiful, reliable software that grows businesses</h1>
+          <p class="lead">Full-stack web & mobile development, cloud infrastructure, and product design tailored to your needs. Fast delivery, strong engineering, clear communication.</p>
+
+          <div class="hero-features" aria-hidden="true">
+            <div class="feature">Enterprise grade</div>
+            <div class="feature">Scalable systems</div>
+            <div class="feature">Design-led approach</div>
+            <div class="feature">Trusted team</div>
+          </div>
+
+          <div class="panel" style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+            <div>
+              <div class="muted-small">Launch a project</div>
+              <div style="font-weight:800;font-size:20px">Start in 2 weeks</div>
+            </div>
+            <div style="text-align:right">
+              <a href="#contact" class="btn">Request a quote</a>
+            </div>
+          </div>
+
+          <div style="margin-top:18px" class="stat-grid">
+            <div class="stat">
+              <h3>120+</h3>
+              <p>Projects delivered</p>
+            </div>
+            <div class="stat">
+              <h3>10y</h3>
+              <p>Collective experience</p>
+            </div>
+            <div class="stat">
+              <h3>99.9%</h3>
+              <p>Uptime & reliability</p>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="panel" aria-label="Contact & quick info">
+            <h4 style="margin:0 0 8px 0">Why choose us</h4>
+            <p class="muted">We design, build and run products that matter. Small teams, strong craftsmanship, and clear roadmaps.</p>
+
+            <div style="margin-top:12px">
+              <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div>
+                  <div style="font-weight:700">Fast delivery</div>
+                  <div class="muted-small">Incremental releases & sprint cadence</div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div>
+                  <div style="font-weight:700">Transparent pricing</div>
+                  <div class="muted-small">Clear estimates and milestones</div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:10px;align-items:center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L20 21 12 16 4 21l2.5-7.5L1 9h7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div>
+                  <div style="font-weight:700">Quality first</div>
+                  <div class="muted-small">Automated testing & code review</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:16px">
+              <a href="#contact" class="btn" style="width:100%;display:inline-flex;justify-content:center">Let's talk</a>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="panel">
+            <h4 style="margin:0 0 8px 0">Contact</h4>
+            <p class="muted-small" style="margin:0 0 8px 0">Email: <a href="mailto:contact@yadavsoftware.com" style="color:var(--accent-2);text-decoration:none">contact@yadavsoftware.com</a></p>
+            <p class="muted-small" style="margin:0">Phone: <a href="tel:+911234567890" style="color:var(--accent-2);text-decoration:none">+91 12 3456 7890</a></p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="services">
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:12px">
+          <h2 style="margin:0">Services</h2>
+          <div class="muted-small">From idea to production</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h4>Web Applications</h4>
+            <p>Modern web apps with React, Vue or Svelte; backend APIs using Node, Python, or Go.</p>
+          </div>
+          <div class="card">
+            <h4>Mobile Apps</h4>
+            <p>Cross-platform apps with Flutter or React Native and native iOS/Android when needed.</p>
+          </div>
+          <div class="card">
+            <h4>Cloud & DevOps</h4>
+            <p>Secure cloud architecture, CI/CD, monitoring and cost optimization on AWS/GCP/Azure.</p>
+          </div>
+          <div class="card">
+            <h4>Product Design</h4>
+            <p>User research, UX/UI design, interactive prototypes and design systems.</p>
+          </div>
+          <div class="card">
+            <h4>Data & AI</h4>
+            <p>Data pipelines, analytics dashboards and ML models integrated into products.</p>
+          </div>
+          <div class="card">
+            <h4>Maintenance & Support</h4>
+            <p>Ongoing support and SLA-backed maintenance to keep your product healthy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:12px">
+          <h2 style="margin:0">Selected Work</h2>
+          <div class="muted-small">Case studies & demos</div>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="project">
+            <div class="meta">
+              <strong>InventoryPro</strong>
+              <span class="muted-small">SaaS</span>
+            </div>
+            <div class="muted-small">A multi-tenant inventory & billing platform with real-time sync and analytics.</div>
+            <div style="margin-top:10px" class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Node</span>
+              <span class="tag">Postgres</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="meta">
+              <strong>DeliverMate</strong>
+              <span class="muted-small">Mobile</span>
+            </div>
+            <div class="muted-small">Delivery tracking app with OTP verification, route optimization and driver dashboard.</div>
+            <div style="margin-top:10px" class="tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">GCP</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="meta">
+              <strong>InsightBoard</strong>
+              <span class="muted-small">Analytics</span>
+            </div>
+            <div class="muted-small">Custom BI dashboard powering data-driven decisions for retail clients.</div>
+            <div style="margin-top:10px" class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 style="margin-bottom:8px">About Yadav Software</h2>
+        <p class="muted" style="margin-top:0">We are a focused team of engineers and designers who partner with startups and SMBs to build products that scale. We emphasize clarity, predictable delivery, and long-term partnerships.</p>
+      </section>
+
+      <section id="contact">
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:12px">
+          <h2 style="margin:0">Contact</h2>
+          <div class="muted-small">Let's start your project</div>
+        </div>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="panel" onsubmit="return submitForm(event)">
+            <div style="display:flex;gap:12px">
+              <div style="flex:1">
+                <label for="name">Your name</label>
+                <input id="name" name="name" required placeholder="Full name" />
+              </div>
+              <div style="width:160px">
+                <label for="budget">Budget</label>
+                <select id="budget" name="budget">
+                  <option value="small">Up to $5k</option>
+                  <option value="medium" selected>$5k–$25k</option>
+                  <option value="large">$25k+</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" />
+            </div>
+
+            <div style="margin-top:12px">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Briefly describe your project and goals"></textarea>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+              <button type="submit" class="btn">Send message</button>
+              <div class="muted-small">Or email <a href="mailto:contact@yadavsoftware.com" style="color:var(--accent-2)">contact@yadavsoftware.com</a></div>
+            </div>
+          </form>
+
+          <aside class="panel">
+            <h4 style="margin-top:0">Office</h4>
+            <p class="muted">Pune, India (remote-friendly)</p>
+
+            <h4 style="margin-top:16px">Working process</h4>
+            <ol class="muted-small">
+              <li>Discovery & estimate</li>
+              <li>Design & prototype</li>
+              <li>Build, test & launch</li>
+              <li>Operate & improve</li>
+            </ol>
+
+            <div style="margin-top:16px">
+              <a href="#" class="muted-small" style="color:var(--muted);text-decoration:none">Privacy policy</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>© <strong>Yadav Software</strong> — Built with care</div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#" class="muted-small">LinkedIn</a>
+          <a href="#" class="muted-small">GitHub</a>
+          <a href="#" class="muted-small">Twitter</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple form handling - replace with your backend or third-party form service
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email) {
+        alert('Please provide name and email.');
+        return false;
+      }
+      // Fallback: open mail client with prefilled content
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\\nEmail: ' + email + '\\n\\n' + message);
+      window.location.href = 'mailto:contact@yadavsoftware.com?subject=' + subject + '&body=' + body;
+      return false;
+    }
+
+    // Accessibility: prefers-reduced-motion handling
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>
